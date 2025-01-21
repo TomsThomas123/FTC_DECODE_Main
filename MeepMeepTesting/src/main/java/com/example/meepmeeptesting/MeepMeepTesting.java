@@ -6,6 +6,7 @@ import com.noahbres.meepmeep.MeepMeep;
 import com.noahbres.meepmeep.roadrunner.DefaultBotBuilder;
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
 
+
 public class MeepMeepTesting {
     public static void main(String[] args) {
         MeepMeep meepMeep = new MeepMeep(500);
@@ -22,7 +23,7 @@ public class MeepMeepTesting {
                 //.splineToSplineHeading(new Pose2d(36, -10, Math.toRadians(270)), Math.PI / 2)
                 //.strafeTo(new Vector2d(46, -10))
                 .strafeTo(new Vector2d(0, -30))
-                .waitSeconds(3)
+                .waitSeconds(1)
 
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
@@ -38,6 +39,16 @@ public class MeepMeepTesting {
                 .strafeTo(new Vector2d(55,-59))
                 .waitSeconds(0.5)
                 //undo ^ if something goes wrong.
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(180))
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(270)), Math.toRadians(270))
+                        .waitSeconds(0.5)
+                        .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(180))
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(270)), Math.toRadians(270))
+                .waitSeconds(0.5)
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(180))
                 /*.strafeTo(new Vector2d(46,-60))
