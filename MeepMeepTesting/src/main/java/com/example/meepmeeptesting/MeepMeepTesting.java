@@ -22,6 +22,7 @@ public class MeepMeepTesting {
                 //.splineToSplineHeading(new Pose2d(36, -10, Math.toRadians(270)), Math.PI / 2)
                 //.strafeTo(new Vector2d(46, -10))
                 .strafeTo(new Vector2d(0, -30))
+                .waitSeconds(3)
 
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
@@ -38,7 +39,7 @@ public class MeepMeepTesting {
                 .waitSeconds(0.5)
                 //undo ^ if something goes wrong.
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), 0)
+                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(180))
                 /*.strafeTo(new Vector2d(46,-60))
 
                 //.afterTime(0, claw.autonCloseClaw())
