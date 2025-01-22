@@ -32,6 +32,7 @@ public class Arm {
 
     public class ArmDown implements Action {
         @Override
+
         public boolean run(@NonNull TelemetryPacket packet) {
             // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
             armMotor.setTargetPosition(ARM_COLLAPSED_INTO_ROBOT);
@@ -44,6 +45,22 @@ public class Arm {
     public Action armDown() {
         return new ArmDown();
     }
+    public class ArmUp implements Action {
+        @Override
+
+        public boolean run(@NonNull TelemetryPacket packet) {
+            // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
+            armMotor.setTargetPosition(ARM_SCORE_SPECIMEN2);
+            armMotor.setPower(0.7);// (adjust speed for whatever is necessary)
+            //(you cannot stop motion within this action, you would have to do it in another)
+            armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            return false;
+        }
+    }
+
+    public Action armUp() {
+        return new ArmUp();
+    }
     public class ArmStop implements Action{
         @Override
         public boolean run(@NonNull TelemetryPacket packet) {
@@ -55,5 +72,6 @@ public class Arm {
     public Action armStop(){
         return new ArmStop();
     }
+
 
 }
