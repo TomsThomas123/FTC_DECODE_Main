@@ -35,17 +35,23 @@ public class MeepMeepTesting {
                 .waitSeconds(0.5)
 
                 .setReversed(true)
+
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(270)), Math.toRadians(270))
                         .waitSeconds(0.5)
                         .setReversed(true)
+
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(270)), Math.toRadians(270))
                 .waitSeconds(0.5)
                 .setReversed(true)
+
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(270)), Math.toRadians(270))
 

@@ -36,11 +36,55 @@ public class SpecimenAuto extends LinearOpMode {
         startPose = new Pose2d(0, -61, Math.toRadians(90));
         drive = new MecanumDrive(hardwareMap, startPose);
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
-                .strafeTo(new Vector2d(0, -30))
-                .afterTime(0.2, arm.armUp())
+                /*.afterTime(0.2, arm.armUp())
                 .afterTime(0.2, wrist.wristScore())
+                .strafeTo(new Vector2d(0, -30))
+
                 .waitSeconds(1)
                 .afterTime(0.1, arm.armDown())
+                */
+                .afterTime(0, arm.armUp())
+                .strafeTo(new Vector2d(0, -30))
+                .waitSeconds(1)
+
+                .setReversed(true)
+                .afterTime(0, arm.armDown())
+                .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
+
+
+                .splineTo(new Vector2d(45, -13), 0)
+
+                .strafeTo(new Vector2d(45,-53))
+                //one in observation zone
+                .strafeTo(new Vector2d(45,-13))
+
+                .strafeTo(new Vector2d(55,-13))
+                .strafeTo(new Vector2d(55,-59))
+                .waitSeconds(0.5)
+                .afterTime(0, arm.armUp())
+
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+                .setReversed(true)
+                .afterTime(0, arm.armDown())
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(270)), Math.toRadians(270))
+
+                .waitSeconds(0.5)
+                .afterTime(0, arm.armUp())
+                .setReversed(true)
+
+                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+                .setReversed(true)
+                .afterTime(0, arm.armDown())
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(270)), Math.toRadians(270))
+                .waitSeconds(0.5)
+                .afterTime(0, arm.armUp())
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(270)), Math.toRadians(270))
+
+
 
 
 
