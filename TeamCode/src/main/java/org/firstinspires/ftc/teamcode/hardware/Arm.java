@@ -37,11 +37,7 @@ public class Arm {
             armMotor.setTargetPosition(ARM_COLLAPSED_INTO_ROBOT);
             armMotor.setPower(0.7);// (adjust speed for whatever is necessary)
             //(you cannot stop motion within this action, you would have to do it in another)
-
-
             armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-
             return false;
         }
     }
