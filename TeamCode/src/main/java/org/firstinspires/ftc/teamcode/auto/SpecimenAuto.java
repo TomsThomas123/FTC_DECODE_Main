@@ -24,7 +24,7 @@ import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.hardware.Arm;
 import org.firstinspires.ftc.teamcode.hardware.Wrist;
 @Config
-@Autonomous(name = "BLUE_TEST_AUTO_PIXEL", group = "Autonomous")
+@Autonomous(name = "RightAutoSpecimen", group = "Autonomous")
 public class SpecimenAuto extends LinearOpMode {
     Pose2d startPose;
     MecanumDrive drive;
