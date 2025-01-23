@@ -26,39 +26,41 @@ public class SpecimenautotestEvan {
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
 
 
-                .splineTo(new Vector2d(45, -13), 0)
+                .splineTo(new Vector2d(45.2, -13), 0)
 
                 .strafeTo(new Vector2d(45,-53))
                 //one in observation zone
                 .strafeTo(new Vector2d(45,-13))
 
-                .strafeTo(new Vector2d(55,-13))
-                .strafeTo(new Vector2d(55,-59))
+                .strafeTo(new Vector2d(56,-13))
+                .strafeTo(new Vector2d(50,-59))
                 .waitSeconds(0.5)
                // .afterTime(0, arm.armUp())
 
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(90)), Math.toRadians(90))
+
                 .setReversed(true)
                // .afterTime(0, arm.armDown())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(-90)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(-90)), Math.toRadians(0))
 
                 .waitSeconds(0.5)
                // .afterTime(0, arm.armUp())
                 .setReversed(true)
 
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(90)), Math.toRadians(90))
+                /*
                 .setReversed(true)
                 //.afterTime(0, arm.armDown())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(-90)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(-90)), Math.toRadians(0))
                 .waitSeconds(0.5)
                // .afterTime(0, arm.armUp())
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(90)), Math.toRadians(90))
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(-90)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(-90)), Math.toRadians(0))
 
-
+                */
 
 
                 .build());
