@@ -24,6 +24,7 @@ import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.hardware.Arm;
 import org.firstinspires.ftc.teamcode.hardware.Wrist;
 import org.firstinspires.ftc.teamcode.hardware.Claw;
+import org.firstinspires.ftc.teamcode.hardware.Lift;
 
 @Config
 @Autonomous(name = "RightAutoSpecimen", group = "Autonomous")
@@ -33,6 +34,7 @@ public class SpecimenAuto extends LinearOpMode {
     Arm arm = new Arm(this);
     Wrist wrist = new Wrist(this);
     Claw claw= new Claw(this);
+    Lift lift = new Lift(this);
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -41,13 +43,12 @@ public class SpecimenAuto extends LinearOpMode {
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
                 .afterTime(0.2, arm.armUp())
                 .afterTime(0.1, claw.clawClose())
-                .strafeTo(new Vector2d(0, -33))
+                .strafeTo(new Vector2d(0, -32.8))
                 .afterTime(0.2, wrist.wristScore())
                 .waitSeconds(2)
-                .afterTime(0.2, wrist.wristScore2())
-
-                .afterTime(0.1, arm.armSpec2())
-                .strafeTo(new Vector2d(0,-30))
+                .afterTime(0.1, lift.liftTiny())
+                .afterTime(1, claw.clawOpen())
+                .strafeTo(new Vector2d(0,-26))
 
                 .waitSeconds(1)
                 .setReversed(true)
@@ -101,6 +102,7 @@ public class SpecimenAuto extends LinearOpMode {
         arm.init();
         wrist.init();
         claw.init();
+        lift.init();
         int position= 1;
         while (!isStopRequested() && !opModeIsActive()) {
             Actions.runBlocking(new SequentialAction(
