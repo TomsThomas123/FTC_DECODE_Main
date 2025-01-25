@@ -48,6 +48,18 @@ public class Wrist {
     public Action wristScore() {
         return new WristScore();
     }
+    public class WristScore2 implements Action {
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket telemetryPacket) {
+            wrist.setPosition(0.95);
+            return false;
+        }
+    }
+
+    public Action wristScore2() {
+        return new WristScore2();
+    }
 
 
 }

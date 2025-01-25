@@ -23,6 +23,8 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.hardware.Arm;
 import org.firstinspires.ftc.teamcode.hardware.Wrist;
+import org.firstinspires.ftc.teamcode.hardware.Claw;
+
 @Config
 @Autonomous(name = "RightAutoSpecimen", group = "Autonomous")
 public class SpecimenAuto extends LinearOpMode {
@@ -30,6 +32,7 @@ public class SpecimenAuto extends LinearOpMode {
     MecanumDrive drive;
     Arm arm = new Arm(this);
     Wrist wrist = new Wrist(this);
+    Claw claw= new Claw(this);
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -45,7 +48,11 @@ public class SpecimenAuto extends LinearOpMode {
                 */
                 .afterTime(0, arm.armUp())
                 .strafeTo(new Vector2d(0, -30))
+                .afterTime(0, wrist.wristScore())
                 .waitSeconds(1)
+                .afterTime(0.1, arm.armSpec2())
+
+                .afterTime(0.1, claw.clawOpen())
 
                 .setReversed(true)
                 .afterTime(0, arm.armDown())
@@ -53,7 +60,7 @@ public class SpecimenAuto extends LinearOpMode {
 
 
                 .splineTo(new Vector2d(45, -13), 0)
-
+                /*
                 .strafeTo(new Vector2d(45,-53))
                 //one in observation zone
                 .strafeTo(new Vector2d(45,-13))
@@ -92,11 +99,12 @@ public class SpecimenAuto extends LinearOpMode {
 
 
 
-
+                */
 
                 ;
         arm.init();
         wrist.init();
+        claw.init();
         int position= 1;
         while (!isStopRequested() && !opModeIsActive()) {
             Actions.runBlocking(new SequentialAction(

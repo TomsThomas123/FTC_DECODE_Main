@@ -72,6 +72,18 @@ public class Arm {
     public Action armStop(){
         return new ArmStop();
     }
+    public class ArmSpec2 implements Action{
+        @Override
+        public boolean run(@NonNull TelemetryPacket packet) {
+            armMotor.setTargetPosition(ARM_SCORE_SPECIMEN2);
+            armMotor.setPower(1);
+            armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            return false;
+        }
+    }
+    public Action armSpec2(){
+        return new ArmSpec2();
+    }
 
 
 }
