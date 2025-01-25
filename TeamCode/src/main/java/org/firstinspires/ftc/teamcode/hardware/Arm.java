@@ -16,7 +16,7 @@ public class Arm {
                     * 1/360.0; // we want ticks per degree, not per rotation
     final int ARM_COLLAPSED_INTO_ROBOT  = (int)(0*ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN        = (int)(60 * ARM_TICKS_PER_DEGREE);
-    final int ARM_SCORE_SPECIMEN2        = (int)(25 * ARM_TICKS_PER_DEGREE);
+    final int ARM_SCORE_SPECIMEN2        = (int)(32 * ARM_TICKS_PER_DEGREE);
     private DcMotorEx armMotor;
     private OpMode myOpMode;
     public Arm(OpMode opmode) {

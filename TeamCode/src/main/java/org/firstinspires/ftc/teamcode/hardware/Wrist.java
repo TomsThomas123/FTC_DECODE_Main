@@ -83,7 +83,7 @@ public class Wrist {
     }
 
     public Action wristGrab() {
-        return new WristScore2();
+        return new WristGrab();
     }
 
 
