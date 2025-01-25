@@ -39,20 +39,17 @@ public class SpecimenAuto extends LinearOpMode {
         startPose = new Pose2d(0, -61, Math.toRadians(90));
         drive = new MecanumDrive(hardwareMap, startPose);
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
-                /*.afterTime(0.2, arm.armUp())
+                .afterTime(0.2, arm.armUp())
+                .afterTime(0.1, claw.clawClose())
+                .strafeTo(new Vector2d(0, -32))
                 .afterTime(0.2, wrist.wristScore())
-                .strafeTo(new Vector2d(0, -30))
+                .waitSeconds(1)
 
-                .waitSeconds(1)
-                .afterTime(0.1, arm.armDown())
-                */
-                .afterTime(0, arm.armUp())
-                .strafeTo(new Vector2d(0, -30))
-                .afterTime(0, wrist.wristScore())
-                .waitSeconds(1)
+
+
                 .afterTime(0.1, arm.armSpec2())
 
-                .afterTime(0.1, claw.clawOpen())
+
 
                 .setReversed(true)
                 .afterTime(0, arm.armDown())
