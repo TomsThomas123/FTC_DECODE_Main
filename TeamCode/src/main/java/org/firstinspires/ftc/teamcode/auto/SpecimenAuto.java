@@ -48,7 +48,7 @@ public class SpecimenAuto extends LinearOpMode {
                 .waitSeconds(2)
                 .afterTime(0.1, lift.liftTiny())
                 .afterTime(1, claw.clawOpen())
-                .strafeTo(new Vector2d(0,-26))
+
 
                 .waitSeconds(1)
                 .setReversed(true)
