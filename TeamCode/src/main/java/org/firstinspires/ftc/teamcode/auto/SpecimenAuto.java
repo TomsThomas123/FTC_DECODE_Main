@@ -43,50 +43,101 @@ public class SpecimenAuto extends LinearOpMode {
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
                 .afterTime(0.2, arm.armUp())
                 .afterTime(0.1, claw.clawClose())
-                .strafeTo(new Vector2d(0, -32.8))
-                .afterTime(0.2, wrist.wristScore())
+                .strafeTo(new Vector2d(0, -31.6))
+                .afterTime(0.1, wrist.wristScore())
+                .strafeTo(new Vector2d(0, -31.1))
+                .afterTime(0 , wrist.wristScore2())
+                .afterTime(0, wrist.wristDanger())
+                .afterTime(0 , arm.armSpec2())
+                .afterTime(0, wrist.wristDanger())
+                .waitSeconds(1)
+               /* .afterTime(0, arm.armSpec2())
+                .afterTime(0, wrist.wristDanger())
+                .afterTime(0, wrist.wristScore())
+                .afterTime(0 , wrist.wristScore2())
+                .afterTime(0, wrist.wristDanger())
                 .waitSeconds(2)
-                .afterTime(0.1, lift.liftTiny())
+
+                */
                 .afterTime(1, claw.clawOpen())
 
-
+                //first specimen done
                 .waitSeconds(1)
+                .afterTime(0.1, wrist.wristDown())
                 .setReversed(true)
-                .afterTime(0, arm.armDown())
+
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
 
 
                 .splineTo(new Vector2d(45, -13), 0)
-                /*
+
                 .strafeTo(new Vector2d(45,-53))
                 //one in observation zone
                 .strafeTo(new Vector2d(45,-13))
 
                 .strafeTo(new Vector2d(55,-13))
-                .strafeTo(new Vector2d(55,-59))
+                .strafeTo(new Vector2d(55,-56))
+                .afterTime(0, wrist.wristGrab())
                 .waitSeconds(0.5)
-                .afterTime(0, arm.armUp())
+                .afterTime(0.1, claw.clawClose())
+
+                .afterTime(1, arm.armUp())
+                .afterTime(0, wrist.wristDown())
 
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1,-31.6), Math.toRadians(-270)), Math.toRadians(90))
+                .afterTime(0.1, wrist.wristScore())
+                .strafeTo(new Vector2d(0, -31.1))
+                .afterTime(0 , wrist.wristScore2())
+                .afterTime(0, wrist.wristDanger())
+                .afterTime(0 , arm.armSpec2())
+                .afterTime(0, wrist.wristDanger())
+                .waitSeconds(1)
+                .afterTime(0, claw.clawOpen())
                 .setReversed(true)
                 .afterTime(0, arm.armDown())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(270)), Math.toRadians(270))
-
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -56), Math.toRadians(270)), Math.toRadians(270))
+                .afterTime(0, wrist.wristGrab())
                 .waitSeconds(0.5)
-                .afterTime(0, arm.armUp())
-                .setReversed(true)
+                .afterTime(0.1, claw.clawClose())
 
-                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+                .afterTime(1, arm.armUp())
+                .afterTime(0, wrist.wristDown())
+                .setReversed(true)
+                .splineToSplineHeading(new Pose2d(new Vector2d(2,-31.6), Math.toRadians(-270)), Math.toRadians(90))
+                .afterTime(0.1, wrist.wristScore())
+                .strafeTo(new Vector2d(0, -31.1))
+                .afterTime(0 , wrist.wristScore2())
+                .afterTime(0, wrist.wristDanger())
+                .afterTime(0 , arm.armSpec2())
+                .afterTime(0, wrist.wristDanger())
+                .waitSeconds(1)
+                .afterTime(0, claw.clawOpen())
                 .setReversed(true)
                 .afterTime(0, arm.armDown())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -59.5), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -56), Math.toRadians(270)), Math.toRadians(270))
+                .afterTime(0, wrist.wristGrab())
                 .waitSeconds(0.5)
-                .afterTime(0, arm.armUp())
+                .afterTime(0.1, claw.clawClose())
+
+                .afterTime(1, arm.armUp())
+                .afterTime(0, wrist.wristDown())
+
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(0,-35), Math.toRadians(-270)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1,-31.6), Math.toRadians(-270)), Math.toRadians(90))
+                .afterTime(0.1, wrist.wristScore())
+                .strafeTo(new Vector2d(0, -31.1))
+                .afterTime(0 , wrist.wristScore2())
+                .afterTime(0, wrist.wristDanger())
+                .afterTime(0 , arm.armSpec2())
+                .afterTime(0, wrist.wristDanger())
+                .waitSeconds(1)
+                .afterTime(0, claw.clawOpen())
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(55,-57), Math.toRadians(270)), Math.toRadians(270))
+                .afterTime(0, arm.armDown())
+
+
+                .splineToSplineHeading(new Pose2d(new Vector2d(55,-56), Math.toRadians(270)), Math.toRadians(270))
 
 
 
@@ -96,7 +147,7 @@ public class SpecimenAuto extends LinearOpMode {
 
 
 
-                */
+
 
                 ;
         arm.init();
@@ -121,6 +172,11 @@ public class SpecimenAuto extends LinearOpMode {
 
 
 
+
+
+
+
     }
+
 }
 

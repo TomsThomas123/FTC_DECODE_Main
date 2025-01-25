@@ -60,6 +60,32 @@ public class Wrist {
     public Action wristScore2() {
         return new WristScore2();
     }
+    public class Wrist1danger implements Action {
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket telemetryPacket) {
+            wrist.setPosition(1);
+            return false;
+        }
+    }
+
+    public Action wristDanger() {
+        return new WristScore2();
+    }
+
+    public class WristGrab implements Action {
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket telemetryPacket) {
+            wrist.setPosition(0.51);
+            return false;
+        }
+    }
+
+    public Action wristGrab() {
+        return new WristScore2();
+    }
+
 
 
 }
