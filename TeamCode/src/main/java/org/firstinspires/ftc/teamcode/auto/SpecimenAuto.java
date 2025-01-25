@@ -41,16 +41,15 @@ public class SpecimenAuto extends LinearOpMode {
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
                 .afterTime(0.2, arm.armUp())
                 .afterTime(0.1, claw.clawClose())
-                .strafeTo(new Vector2d(0, -32))
+                .strafeTo(new Vector2d(0, -33))
                 .afterTime(0.2, wrist.wristScore())
-                .waitSeconds(1)
-
-
+                .waitSeconds(2)
+                .afterTime(0.2, wrist.wristScore2())
 
                 .afterTime(0.1, arm.armSpec2())
+                .strafeTo(new Vector2d(0,-30))
 
-
-
+                .waitSeconds(1)
                 .setReversed(true)
                 .afterTime(0, arm.armDown())
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
