@@ -78,7 +78,7 @@ public class SpecimenAuto extends LinearOpMode {
 
                 .strafeTo(new Vector2d(56.5,-13))
                 .afterTime(0, wrist.wristGrab())
-                .strafeTo(new Vector2d(56.5,-55))
+                .strafeTo(new Vector2d(56.5,-54.8))
                 .waitSeconds(1)
                 .afterTime(0.1, claw.clawClose())
                 .waitSeconds(0.9)
