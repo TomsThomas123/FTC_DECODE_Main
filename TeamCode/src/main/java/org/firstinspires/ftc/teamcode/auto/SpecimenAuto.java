@@ -41,6 +41,7 @@ public class SpecimenAuto extends LinearOpMode {
         startPose = new Pose2d(0, -61, Math.toRadians(90));
         drive = new MecanumDrive(hardwareMap, startPose);
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
+
                 .afterTime(0.2, arm.armUp())
                 .afterTime(0.1, claw.clawClose())
                 .strafeTo(new Vector2d(0, -31.4))
@@ -78,7 +79,7 @@ public class SpecimenAuto extends LinearOpMode {
 
                 .strafeTo(new Vector2d(56.5,-13))
                 .afterTime(0, wrist.wristGrab())
-                .strafeTo(new Vector2d(56.5,-54.8))
+                .strafeTo(new Vector2d(56.5,-54.5))
                 .waitSeconds(1)
                 .afterTime(0.1, claw.clawClose())
                 .waitSeconds(0.9)
@@ -86,7 +87,7 @@ public class SpecimenAuto extends LinearOpMode {
                 .afterTime(0, wrist.wristDown())
 
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(1,-31.3), Math.toRadians(-270)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1,-31.4), Math.toRadians(-270)), Math.toRadians(90))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -31))
                 .afterTime(0 , wrist.wristScore2())
@@ -108,9 +109,9 @@ public class SpecimenAuto extends LinearOpMode {
                 .afterTime(0, wrist.wristDown())
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(2,-31.3), Math.toRadians(-270)), Math.toRadians(90))
-                // commented for test .afterTime(0.1, wrist.wristScore())
+                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -31.1))
-                .afterTime(0.1, wrist.wristScore()) //this is added as test delete this line and uncomment other one for 2 spec auto
+                 //this is added as test delete this line and uncomment other one for 2 spec auto
                 .afterTime(0 , wrist.wristScore2())
                 .afterTime(0, wrist.wristDanger())
                 .afterTime(0 , arm.armSpec2())
