@@ -49,9 +49,10 @@ public class SpecimenautotestEvan {
                 .setReversed(true)
                 //.afterTime(0 , arm.armStop())
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
+                .splineToLinearHeading(new Pose2d(new Vector2d(45,-13), Math.toRadians(-90)), 0)
 
 
-                .splineTo(new Vector2d(45, -13), 0)
+                //.splineTo(new Vector2d(45, -13), 0)
 
                 .strafeTo(new Vector2d(45,-53))
                 //one in observation zone
