@@ -75,7 +75,10 @@ public class SpecimenAuto extends LinearOpMode {
 
                 .strafeTo(new Vector2d(45,-53))
                 //one in observation zone
-                .strafeTo(new Vector2d(45,-13))
+                // testing .strafeTo(new Vector2d(45,-13))
+                // next spline to go faster
+                .setReversed(true)
+                .splineToLinearHeading(new Pose2d(new Vector2d(56.5, -13), Math.toRadians(-90)), 0)
 
                 .strafeTo(new Vector2d(56.5,-13))
                 .afterTime(0, wrist.wristGrab())
