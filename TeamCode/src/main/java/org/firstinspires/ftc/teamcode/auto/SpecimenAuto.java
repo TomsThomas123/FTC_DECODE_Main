@@ -90,7 +90,7 @@ public class SpecimenAuto extends LinearOpMode {
                 .afterTime(0, wrist.wristDown())
 
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(-3,-31.4), Math.toRadians(-270)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(-2,-31.4), Math.toRadians(-270)), Math.toRadians(90))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -31))
                 .afterTime(0 , wrist.wristScore2())
@@ -103,7 +103,7 @@ public class SpecimenAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(50, -53), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(55, -49), Math.toRadians(270)), Math.toRadians(270))
                 .afterTime(0, wrist.wristDown()) //changed
                 /*
                 .waitSeconds(1)
