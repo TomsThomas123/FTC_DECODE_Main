@@ -27,7 +27,7 @@ import org.firstinspires.ftc.teamcode.hardware.Claw;
 import org.firstinspires.ftc.teamcode.hardware.Lift;
 
 @Config
-@Autonomous(name = "RightAutoSpecimen", group = "Autonomous")
+@Autonomous(name = "2RightAutoSpecimen", group = "Autonomous")
 public class SpecimenAuto extends LinearOpMode {
     Pose2d startPose;
     MecanumDrive drive;
@@ -103,8 +103,9 @@ public class SpecimenAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -53), Math.toRadians(270)), Math.toRadians(270))
-                .afterTime(0, wrist.wristGrab())
+                .splineToSplineHeading(new Pose2d(new Vector2d(50, -53), Math.toRadians(270)), Math.toRadians(270))
+                .afterTime(0, wrist.wristDown()) //changed
+                /*
                 .waitSeconds(1)
                 .afterTime(0.1, claw.clawClose())
                 .waitSeconds(0.9)
@@ -151,7 +152,7 @@ public class SpecimenAuto extends LinearOpMode {
                 .splineToSplineHeading(new Pose2d(new Vector2d(55,-55), Math.toRadians(270)), Math.toRadians(270))
 
 
-
+            */
 
 
 
