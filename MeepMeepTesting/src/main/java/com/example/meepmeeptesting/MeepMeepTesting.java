@@ -16,7 +16,9 @@ public class MeepMeepTesting {
                 .build();
 
         myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(0, -61, Math.toRadians(90)))
-                .strafeTo(new Vector2d(5, -30))
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -54.5), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-31.25), Math.toRadians(-270)), Math.toRadians(90))
+                /*.strafeTo(new Vector2d(5, -30))
 
                 //put arm up while strafing
                 //stop and place the sample on the bar
