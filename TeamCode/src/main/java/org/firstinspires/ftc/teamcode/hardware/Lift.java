@@ -14,7 +14,7 @@ public class Lift {
     final double LIFT_COLLAPSED = 0 * LIFT_TICKS_PER_MM;
     final double LIFT_COLLECT =  100 * LIFT_TICKS_PER_MM;
     final double LIFT_SCORING_IN_LOW_BASKET = 0 * LIFT_TICKS_PER_MM;
-    final double LIFT_SCORING_IN_HIGH_BASKET = 600 * LIFT_TICKS_PER_MM;
+    double LIFT_SCORING_IN_HIGH_BASKET = 600 * LIFT_TICKS_PER_MM;
     final double TINY = ( 400 * LIFT_TICKS_PER_MM);
 
     double liftPosition = LIFT_COLLAPSED;
@@ -29,13 +29,15 @@ public class Lift {
         liftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         liftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         liftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        ((DcMotorEx) liftMotor).setVelocity(2100);
     }
+
     public class LiftTiny implements Action {
         @Override
 
         public boolean run(@NonNull TelemetryPacket packet) {
             // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
-            liftMotor.setTargetPosition((int) 1281.7993079584774);
+            liftMotor.setTargetPosition((int) LIFT_SCORING_IN_HIGH_BASKET);
             liftMotor.setPower(0.6);// (adjust speed for whatever is necessary)
             //(you cannot stop motion within this action, you would have to do it in another)
             liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
