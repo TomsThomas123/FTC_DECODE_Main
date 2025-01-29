@@ -38,7 +38,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0.1, claw.clawClose())
                 .strafeTo(new Vector2d(0, -30))
                 .afterTime(0.1, wrist.wristScore())
-                .strafeTo(new Vector2d(0, -29.9))
+                .strafeTo(new Vector2d(0, -29.4))
                 .afterTime(0 , wrist.wristScore2())
                 .afterTime(0, wrist.wristDanger())
                 .afterTime(0 , arm.armSpec2())
@@ -138,7 +138,7 @@ public class threeSpecAuto extends LinearOpMode {
         arm.init();
         wrist.init();
         claw.init();
-        lift.init();
+        lift.init2();
         int position= 1;
         while (!isStopRequested() && !opModeIsActive()) {
             Actions.runBlocking(new SequentialAction(

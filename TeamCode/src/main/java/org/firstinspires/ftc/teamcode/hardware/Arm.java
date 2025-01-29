@@ -17,6 +17,8 @@ public class Arm {
     final int ARM_COLLAPSED_INTO_ROBOT  = (int)(0*ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN        = (int)(60 * ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN2        = (int)(30 * ARM_TICKS_PER_DEGREE);
+    final int ARM_SCORE_SAMPLE_IN_LOW   = (int)(90 * ARM_TICKS_PER_DEGREE);
+
     private DcMotorEx armMotor;
     private OpMode myOpMode;
     public Arm(OpMode opmode) {
@@ -83,6 +85,22 @@ public class Arm {
     }
     public Action armSpec2(){
         return new ArmSpec2();
+    }
+    public class ArmBasket implements Action {
+        @Override
+
+        public boolean run(@NonNull TelemetryPacket packet) {
+            // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
+            armMotor.setTargetPosition(ARM_SCORE_SAMPLE_IN_LOW);
+            armMotor.setPower(0.7);// (adjust speed for whatever is necessary)
+            //(you cannot stop motion within this action, you would have to do it in another)
+            armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            return false;
+        }
+    }
+
+    public Action armBasket() {
+        return new ArmBasket();
     }
 
 

@@ -33,7 +33,8 @@ public class testing extends LinearOpMode {
         startPose = new Pose2d(0, -61, Math.toRadians(90));
         drive = new MecanumDrive(hardwareMap, startPose);
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
-
+                .afterTime(0 , arm.armUp())
+                .waitSeconds(1)
                 .afterTime(0, lift.liftTiny())
 
 
