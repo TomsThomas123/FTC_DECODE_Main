@@ -17,6 +17,8 @@ public class Arm {
     final int ARM_COLLAPSED_INTO_ROBOT  = (int)(0*ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN        = (int)(60 * ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN2        = (int)(30 * ARM_TICKS_PER_DEGREE);
+    final int ARM_SCORE_SPECIMEN3        = (int)(25 * ARM_TICKS_PER_DEGREE);
+
     final int ARM_SCORE_SAMPLE_IN_LOW   = (int)(90 * ARM_TICKS_PER_DEGREE);
 
     private DcMotorEx armMotor;
@@ -85,6 +87,18 @@ public class Arm {
     }
     public Action armSpec2(){
         return new ArmSpec2();
+    }
+    public class ArmSpec3 implements Action{
+        @Override
+        public boolean run(@NonNull TelemetryPacket packet) {
+            armMotor.setTargetPosition(ARM_SCORE_SPECIMEN2);
+            armMotor.setPower(1);
+            armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            return false;
+        }
+    }
+    public Action armSpec3(){
+        return new ArmSpec3();
     }
     public class ArmBasket implements Action {
         @Override
