@@ -45,7 +45,7 @@ public class Lift {
 
         public boolean run(@NonNull TelemetryPacket packet) {
             // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
-            liftMotor.setTargetPosition(LIFT_SCORING_IN_HIGH_BASKET);
+            liftMotor.setTargetPosition(1923);
             liftMotor.setPower(0.6);// (adjust speed for whatever is necessary)
             //(you cannot stop motion within this action, you would have to do it in another)
             liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);

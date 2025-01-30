@@ -39,6 +39,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .strafeTo(new Vector2d(0,-31.1))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -31))
+                .afterTime(0.1, wrist.wristScore())
                 .afterTime(0 , wrist.wristScore2())
                 .afterTime(0, wrist.wristDanger())
                 .afterTime(0 , arm.armSpec2())

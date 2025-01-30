@@ -36,6 +36,7 @@ public class testing extends LinearOpMode {
                 .afterTime(0 , arm.armUp())
                 .waitSeconds(1)
                 .afterTime(0, lift.liftTiny())
+                .waitSeconds(10)
 
 
 
@@ -43,7 +44,7 @@ public class testing extends LinearOpMode {
         arm.init();
         wrist.init();
         claw.init();
-        lift.init();
+        lift.init2();
         int position= 1;
         while (!isStopRequested() && !opModeIsActive()) {
             Actions.runBlocking(new SequentialAction(
