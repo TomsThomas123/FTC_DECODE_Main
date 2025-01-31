@@ -102,7 +102,8 @@ public class SpecimenAuto extends LinearOpMode {
                 .setReversed(true)
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
-                .afterTime(0, wrist.wristGrab())
+                .afterTime(0.1, claw.clawClose())
+                .afterTime(0, wrist.wristDown())
                 .splineToSplineHeading(new Pose2d(new Vector2d(55, -49), Math.toRadians(270)), Math.toRadians(270))
                 .afterTime(0, wrist.wristDown()) //changed
                 /*
