@@ -45,8 +45,11 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0 , arm.armSpec2())
                 .afterTime(0, wrist.wristDanger())
                 .waitSeconds(0.8)
-                .afterTime(0, claw.clawOpen())
-                .afterTime(0, wrist.wristDown())
+                .afterTime(0.1, wrist.wristScore())
+                .afterTime(0 , wrist.wristScore2())
+                .afterTime(0, wrist.wristDanger())
+                .afterTime(0 , arm.armSpec2())
+                .afterTime(0, wrist.wristDanger())
                 /*.strafeTo(new Vector2d(0, -31.4))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -31))
@@ -70,7 +73,7 @@ public class threeSpecAuto extends LinearOpMode {
                 */
                 .waitSeconds(0.2)
                 .afterTime(1, claw.clawOpen())
-
+                .waitSeconds(0.2)
                 //first specimen done
                 .afterTime(0.1, wrist.wristDown())
                 .waitSeconds(0.4)
@@ -81,7 +84,7 @@ public class threeSpecAuto extends LinearOpMode {
 
                 .afterTime(0, wrist.wristGrab())
 
-                .strafeTo(new Vector2d(45,-54.8))
+                .strafeTo(new Vector2d(45,-54.9))
                 //one in observation zone
                 // testing .strafeTo(new Vector2d(45,-13))
                 // next spline to go faster
@@ -106,7 +109,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -54.65), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(38, -54.85), Math.toRadians(270)), Math.toRadians(270))
                 .afterTime(0, wrist.wristGrab())
                 //2 done
                 .waitSeconds(1)
@@ -130,7 +133,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -54.6), Math.toRadians(270)), Math.toRadians(270))
+                .strafeTo(new Vector2d(38, -54.6))
                 .afterTime(0, wrist.wristGrab())
 
                 /*
