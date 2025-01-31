@@ -154,7 +154,7 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
 
     double armLiftComp = 0;
 
-    final double claw_OPEN = 0;
+    final double claw_OPEN = 0.1;
     final double claw_CLOSE= 1;
 
     @Override

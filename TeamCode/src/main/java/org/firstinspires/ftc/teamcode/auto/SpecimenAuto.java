@@ -78,16 +78,18 @@ public class SpecimenAuto extends LinearOpMode {
                 // testing .strafeTo(new Vector2d(45,-13))
                 // next spline to go faster
                 .setReversed(true)
-                .splineToLinearHeading(new Pose2d(new Vector2d(56.5, -13), Math.toRadians(-90)), 0)
+                .splineToLinearHeading(new Pose2d(new Vector2d(56.42, -13), Math.toRadians(-90)), 0)
 
                 .strafeTo(new Vector2d(56.5,-13))
                 .afterTime(0, wrist.wristGrab())
-                .strafeTo(new Vector2d(56.5,-54.487))
-                .waitSeconds(1)
+                .strafeTo(new Vector2d(56.5,-54.45))
+                .waitSeconds(2)
                 .afterTime(0.1, claw.clawClose())
-                .waitSeconds(0.9)
+                .waitSeconds(1.3)
                 .afterTime(1, arm.armUp())
                 .afterTime(0, wrist.wristDown())
+                .waitSeconds(0.2)
+                .afterTime(0,lift.liftVel())
 
                 .setReversed(true)
                 .splineToSplineHeading(new Pose2d(new Vector2d(-2,-31.4), Math.toRadians(-270)), Math.toRadians(90))

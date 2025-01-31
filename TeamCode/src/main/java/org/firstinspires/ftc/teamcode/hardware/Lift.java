@@ -66,4 +66,16 @@ public class Lift {
     public Action liftDown() {
         return new LiftDown();
     }
+    public class liftbackvel implements Action {
+        @Override
+
+        public boolean run(@NonNull TelemetryPacket packet) {
+            ((DcMotorEx) liftMotor).setVelocity(2100);
+
+            return false;
+        }
+    }
+    public Action liftVel() {
+        return new liftbackvel();
+    }
 }
