@@ -86,7 +86,7 @@ public class threeSpecAuto extends LinearOpMode {
 
                 .afterTime(0, wrist.wristGrab())
 
-                .strafeTo(new Vector2d(45,-54.9))
+                .strafeTo(new Vector2d(45,-54.92))
                 //one in observation zone
                 // testing .strafeTo(new Vector2d(45,-13))
                 // next spline to go faster
@@ -111,7 +111,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(38, -54.88), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(43, -54.92), Math.toRadians(270)), Math.toRadians(270))
                 .afterTime(0, wrist.wristGrab())
                 //2 done
                 .waitSeconds(1)
@@ -121,7 +121,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, wrist.wristDown())
 
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-30.7), Math.toRadians(90)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-30.13), Math.toRadians(90)), Math.toRadians(90))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -30))//31-30
                 .afterTime(0 , wrist.wristScore2())
