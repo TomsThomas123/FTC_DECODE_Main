@@ -72,21 +72,27 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0 , arm.armSpec3())
                 */
 
+
+
+
                /* .afterTime(0, arm.armSpec2())
                 .afterTime(0, wrist.wristDanger())
                 .afterTime(0, wrist.wristScore())
                 .afterTime(0 , wrist.wristScore2())
                 .afterTime(0, wrist.wristDanger())
                 .waitSeconds(2)
-
                 */
-                .afterTime(0 , lift.liftVel())
+
+
+                .waitSeconds(0.1)
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
+                .afterTime(0 , lift.liftVel())
+
                 .splineToLinearHeading(new Pose2d(new Vector2d(45,-13), Math.toRadians(-90)), 0)
 
                 .afterTime(0, wrist.wristGrab())
 
-                .strafeTo(new Vector2d(45,-54.92))
+                .strafeTo(new Vector2d(45,-54.99))
                 //one in observation zone
                 // testing .strafeTo(new Vector2d(45,-13))
                 // next spline to go faster
@@ -111,7 +117,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(43, -54.92), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(43, -55), Math.toRadians(270)), Math.toRadians(270))
                 .afterTime(0, wrist.wristGrab())
                 //2 done
                 .waitSeconds(1)
@@ -121,7 +127,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, wrist.wristDown())
 
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-30.13), Math.toRadians(90)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-29.7544), Math.toRadians(90)), Math.toRadians(90))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -30))//31-30
                 .afterTime(0 , wrist.wristScore2())
