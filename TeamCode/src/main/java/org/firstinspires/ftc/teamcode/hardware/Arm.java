@@ -17,7 +17,7 @@ public class Arm {
     final int ARM_COLLAPSED_INTO_ROBOT  = (int)(0*ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN        = (int)(60 * ARM_TICKS_PER_DEGREE);
     final int ARM_SCORE_SPECIMEN2        = (int)(30 * ARM_TICKS_PER_DEGREE);
-    final int ARM_SCORE_SPECIMEN3        = (int)(29 * ARM_TICKS_PER_DEGREE);
+    final int ARM_SCORE_SPECIMEN3        = (int)(25 * ARM_TICKS_PER_DEGREE);
 
     final int ARM_SCORE_SAMPLE_IN_LOW   = (int)(90 * ARM_TICKS_PER_DEGREE);
 

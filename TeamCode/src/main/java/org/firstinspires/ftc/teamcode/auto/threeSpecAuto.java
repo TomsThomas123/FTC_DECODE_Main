@@ -35,15 +35,15 @@ public class threeSpecAuto extends LinearOpMode {
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
                 .afterTime(0.2, arm.armUp())
                 .afterTime(0.1, claw.clawClose())
-                .strafeTo(new Vector2d(0, -31))
+                .strafeTo(new Vector2d(0, -31.434))
                 .afterTime(0.1, wrist.wristScore())
                 .strafeTo(new Vector2d(0, -31))
                 .afterTime(0 , wrist.wristScore2())
                 .afterTime(0, wrist.wristDanger())
-                .afterTime(0 , arm.armSpec2())
+                .afterTime(0.1 , arm.armSpec3())
                 .afterTime(0, wrist.wristDanger())
                 .waitSeconds(0.5)
-                .afterTime(0 , wrist.wristDanger())
+                .afterTime(0.1 , wrist.wristDanger())
                 /* .afterTime(0, arm.armSpec2())
                  .afterTime(0, wrist.wristDanger())
                  .afterTime(0, wrist.wristScore())
@@ -52,6 +52,7 @@ public class threeSpecAuto extends LinearOpMode {
                  .waitSeconds(2)
 
                  */
+                .waitSeconds(0.1)
                 .afterTime(1, claw.clawOpen())
 
                 //first specimen done
@@ -84,7 +85,7 @@ public class threeSpecAuto extends LinearOpMode {
                 */
 
 
-                .waitSeconds(0.1)
+                .waitSeconds(0.5)
                 .splineToSplineHeading(new Pose2d(new Vector2d(26,-43), Math.toRadians(-90)), 0)
                 .afterTime(0 , lift.liftVel())
 
@@ -117,7 +118,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .splineToSplineHeading(new Pose2d(new Vector2d(43, -55), Math.toRadians(270)), Math.toRadians(270))
+                .splineToSplineHeading(new Pose2d(new Vector2d(43, -52.345), Math.toRadians(270)), Math.toRadians(270))
                 .afterTime(0, wrist.wristGrab())
                 //2 done
                 .waitSeconds(1)
@@ -127,9 +128,9 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, wrist.wristDown())
 
                 .setReversed(true)
-                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-29.7544), Math.toRadians(90)), Math.toRadians(90))
+                .splineToSplineHeading(new Pose2d(new Vector2d(1.6,-26), Math.toRadians(90)), Math.toRadians(90))
                 .afterTime(0.1, wrist.wristScore())
-                .strafeTo(new Vector2d(0, -30))//31-30
+                .strafeTo(new Vector2d(0, -26))//31-30
                 .afterTime(0 , wrist.wristScore2())
                 .afterTime(0, wrist.wristDanger())
                 .afterTime(0 , arm.armSpec2())
@@ -141,7 +142,7 @@ public class threeSpecAuto extends LinearOpMode {
                 .afterTime(0, arm.armDown())
                 .afterTime(0 , arm.armStop())
                 .afterTime(0, wrist.wristGrab())
-                .strafeTo(new Vector2d(38, -54.6))
+                .strafeTo(new Vector2d(50, -54.6))
                 .afterTime(0, wrist.wristGrab())
 
                 /*
