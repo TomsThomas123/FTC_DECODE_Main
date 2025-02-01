@@ -371,7 +371,9 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
             else if (gamepad2.a) {
                     /* This turns off the intake, folds in the wrist, and moves the arm
                     back to folded inside the robot. This is also the starting configuration */
+                claw.setPosition(claw_CLOSE);
                 wrist.setPosition(WRIST_FOLDED_IN);
+
                 sleep(250);
                 armPosition = ARM_COLLAPSED_INTO_ROBOT;
                 //intake.setPower(INTAKE_OFF);
