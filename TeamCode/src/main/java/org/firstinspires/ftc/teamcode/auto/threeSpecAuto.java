@@ -92,7 +92,7 @@ public class threeSpecAuto extends LinearOpMode {
 
                 .afterTime(0, wrist.wristGrab())
 
-                .strafeTo(new Vector2d(45,-54.99))
+                .strafeTo(new Vector2d(45,-55))
                 //one in observation zone
                 // testing .strafeTo(new Vector2d(45,-13))
                 // next spline to go faster
