@@ -85,6 +85,18 @@ public class Wrist {
     public Action wristGrab() {
         return new WristGrab();
     }
+    public class WristMid implements Action {
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket telemetryPacket) {
+            wrist.setPosition(0.51);
+            return false;
+        }
+    }
+
+    public Action wristMid() {
+        return new WristGrab();
+    }
 
 
 
