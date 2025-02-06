@@ -22,7 +22,7 @@ public class Claw {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            wrist.setPosition(1);
+            wrist.setPosition(0.05);
             return false;
         }
     }
@@ -35,7 +35,7 @@ public class Claw {
 
         public boolean run(@NonNull TelemetryPacket packet) {
             // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
-            wrist.setPosition(0.1);
+            wrist.setPosition(0.5);
             return false;
         }
     }

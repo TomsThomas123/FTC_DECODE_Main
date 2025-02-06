@@ -143,7 +143,7 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
     final double LIFT_COLLAPSED = 0 * LIFT_TICKS_PER_MM;
     final double LIFT_COLLECT =  400 * LIFT_TICKS_PER_MM;
     final double LIFT_SCORING_IN_LOW_BASKET = 0 * LIFT_TICKS_PER_MM;
-    final double LIFT_SCORING_IN_HIGH_BASKET = 600 * LIFT_TICKS_PER_MM;
+    final double LIFT_SCORING_IN_HIGH_BASKET = 610 * LIFT_TICKS_PER_MM;
 
     double liftPosition = LIFT_COLLAPSED;
     double hangPosotion= 0;
@@ -154,8 +154,8 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
 
     double armLiftComp = 0;
 
-    final double claw_OPEN = 0.1;
-    final double claw_CLOSE= 1;
+    final double claw_OPEN = 0.5;
+    final double claw_CLOSE= 0.05;
 
     @Override
     public void runOpMode() {

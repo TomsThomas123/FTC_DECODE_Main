@@ -42,7 +42,7 @@ public class HighBasjet extends LinearOpMode {
         // Initialize all subsystems
         arm.init();
         wrist.init();
-        lift.init();
+        lift.init2();
         claw.init();
 
         // Trajectory Building
@@ -50,8 +50,9 @@ public class HighBasjet extends LinearOpMode {
 
                 // Step 1: Move to the high basket position
                 .afterTime(0.1, claw.clawClose())                     // Close the claw to secure object
-                .afterTime(0.1, arm.armUp())
-                .splineToLinearHeading(new Pose2d(-58.5, -58.5, Math.toRadians(225)), Math.toRadians(225))
+                .afterTime(0.1, arm.armBasket())
+                .splineToLinearHeading(new Pose2d(-59, -59, Math.toRadians(225)), Math.toRadians(225))
+                .afterTime(0, lift.liftUp())
 // Move the arm to basket position
                 .afterTime(0, wrist.wristScore())                   // Prepare wrist for scoring
                  // Move to basket
@@ -60,6 +61,7 @@ public class HighBasjet extends LinearOpMode {
                 .afterTime(0, wrist.wristMid())                     // Adjust wrist for scoring
                 .afterTime(0, claw.clawOpen())
                 .waitSeconds(5)
+                .afterTime(0, wrist.wristDown())
                 .strafeTo(new Vector2d(-50, -45))
                 .afterTime(0.1, arm.armDown())
                 .afterTime(0.1 , arm.armStop())

@@ -7,6 +7,7 @@ import com.acmerobotics.roadrunner.Action;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 public class Lift {
     final double LIFT_TICKS_PER_MM = (111132.0 / 289.0) / 120.0;
@@ -37,6 +38,7 @@ public class Lift {
         liftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         liftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         ((DcMotorEx) liftMotor).setVelocity(2100);
+        liftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
     }
 
@@ -78,4 +80,28 @@ public class Lift {
     public Action liftVel() {
         return new liftbackvel();
     }
+    public class LiftUp implements Action {
+        private boolean initialized = false;
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket packet) {
+            if (!initialized) {
+                liftMotor.setPower(0.8);
+                initialized = true;
+            }
+
+            double pos = liftMotor.getCurrentPosition();
+            packet.put("liftPos", pos);
+            if (pos < 1945) {
+                return true;
+            } else {
+                liftMotor.setPower(0);
+                return false;
+            }
+        }
+    }
+    public Action liftUp() {
+        return new LiftUp();
+    }
+
 }
