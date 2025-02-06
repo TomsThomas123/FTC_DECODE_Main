@@ -48,6 +48,19 @@ public class Wrist {
     public Action wristScore() {
         return new WristScore();
     }
+    public class WristGrabSample implements Action {
+        @Override
+
+        public boolean run(@NonNull TelemetryPacket packet) {
+            // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
+            wrist.setPosition(0.76);
+            return false;
+        }
+    }
+
+    public Action wristGrabSample() {
+        return new WristGrabSample();
+    }
     public class WristScore2 implements Action {
 
         @Override

@@ -42,32 +42,6 @@ public class Lift {
 
     }
 
-    public class LiftTiny implements Action {
-        @Override
-
-        public boolean run(@NonNull TelemetryPacket packet) {
-            // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
-            liftMotor.setTargetPosition(1923);
-            liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            return false;
-        }
-    }
-    public Action liftTiny() {
-        return new LiftTiny();
-    }
-    public class LiftDown implements Action {
-        @Override
-
-        public boolean run(@NonNull TelemetryPacket packet) {
-            // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
-            liftMotor.setPower(0);// (adjust speed for whatever is necessary)
-            //(you cannot stop motion within this action, you would have to do it in another)
-            return false;
-        }
-    }
-    public Action liftDown() {
-        return new LiftDown();
-    }
     public class liftbackvel implements Action {
         @Override
 
@@ -102,6 +76,64 @@ public class Lift {
     }
     public Action liftUp() {
         return new LiftUp();
+    }
+
+
+
+
+
+
+    public class LiftTiny implements Action {
+        private boolean initialized = false;
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket packet) {
+            if (!initialized) {
+                liftMotor.setPower(0.8);
+                initialized = true;
+            }
+
+            double pos = liftMotor.getCurrentPosition();
+            packet.put("liftPos", pos);
+            if (pos < 1940) {
+                return true;
+            } else {
+                liftMotor.setPower(0);
+                return false;
+            }
+        }
+    }
+    public Action liftTiny() {
+        return new LiftTiny();
+    }
+
+
+
+
+
+
+    public class LiftDown implements Action {
+        private boolean initialized = false;
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket packet) {
+            if (!initialized) {
+                liftMotor.setPower(-0.8);
+                initialized = true;
+            }
+
+            double pos = liftMotor.getCurrentPosition();
+            packet.put("liftPos", pos);
+            if (pos > 10) {
+                return true;
+            } else {
+                liftMotor.setPower(0);
+                return false;
+            }
+        }
+    }
+    public Action liftDown() {
+        return new LiftDown();
     }
 
 }

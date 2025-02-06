@@ -35,8 +35,6 @@ public class testing extends LinearOpMode {
         TrajectoryActionBuilder build = drive.actionBuilder(startPose)
                 .afterTime(0 , arm.armBasket())
                 .waitSeconds(1)
-                .afterTime(0, lift.liftUp())
-                .waitSeconds(10)
 
 
 

@@ -60,11 +60,17 @@ public class HighBasjet extends LinearOpMode {
                 // Step 2: Score the object in the high basket
                 .afterTime(0, wrist.wristMid())                     // Adjust wrist for scoring
                 .afterTime(0, claw.clawOpen())
-                .waitSeconds(5)
+                .waitSeconds(1)
                 .afterTime(0, wrist.wristDown())
-                .strafeTo(new Vector2d(-50, -45))
+                .afterTime(0.2, lift.liftDown())
+                .splineToLinearHeading(new Pose2d(new Vector2d(-48, -46), Math.toRadians(90)), Math.toRadians(90))
                 .afterTime(0.1, arm.armDown())
                 .afterTime(0.1 , arm.armStop())
+                .waitSeconds(0.4)
+                .afterTime(0, lift.liftTiny())
+                .afterTime(0 , claw.clawOpen())
+                .waitSeconds(0.1)
+                .
         ;// Open the claw to release object
 
                          // Final parking position
