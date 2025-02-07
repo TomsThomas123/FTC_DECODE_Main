@@ -58,7 +58,9 @@ public class HighBasjet extends LinearOpMode {
                  // Move to basket
                 .waitSeconds(1)
                 // Step 2: Score the object in the high basket
-                .afterTime(0, wrist.wristMid())                     // Adjust wrist for scoring
+                .afterTime(0, wrist.wristMid())
+                .waitSeconds(1)
+// Adjust wrist for scoring
                 .afterTime(0, claw.clawOpen())
                 .waitSeconds(1)
                 .afterTime(0, wrist.wristDown())
@@ -66,12 +68,36 @@ public class HighBasjet extends LinearOpMode {
                 .splineToLinearHeading(new Pose2d(new Vector2d(-48, -46), Math.toRadians(90)), Math.toRadians(90))
                 .afterTime(0.1, arm.armDown())
                 .afterTime(0.1 , arm.armStop())
-                .waitSeconds(0.4)
+                .waitSeconds(5)
+                //762 lift 829 arm
                 .afterTime(0, lift.liftTiny())
                 .afterTime(0 , claw.clawOpen())
                 .waitSeconds(0.1)
-                .
-        ;// Open the claw to release object
+                .afterTime(0.1 , wrist.wristGrabSample())
+                .waitSeconds(1)
+                .afterTime(0.1, claw.clawClose())
+                //picked up second one
+                .afterTime(0.1, arm.armBasket())
+                .splineToLinearHeading(new Pose2d(-59, -59, Math.toRadians(225)), Math.toRadians(225))
+                .afterTime(0, lift.liftUp())
+// Move the arm to basket position
+                .afterTime(0, wrist.wristScore())                   // Prepare wrist for scoring
+                // Move to basket
+                .waitSeconds(1)
+                // Step 2: Score the object in the high basket
+                .afterTime(0, wrist.wristMid())                     // Adjust wrist for scoring
+                .afterTime(0, claw.clawOpen())
+                .waitSeconds(1)
+                .afterTime(0, wrist.wristDown())
+                .afterTime(0.2, lift.liftDown())
+                .splineToLinearHeading(new Pose2d(new Vector2d(-48, -46), Math.toRadians(90)), Math.toRadians(90))
+
+
+
+
+
+                ;
+                // Open the claw to release object
 
                          // Final parking position
 

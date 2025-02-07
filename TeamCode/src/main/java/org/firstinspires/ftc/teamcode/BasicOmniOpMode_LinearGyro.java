@@ -131,7 +131,7 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
 */
     /* Variables to store the positions that the wrist should be set to when folding in, or folding out. */
     final double WRIST_FOLDED_IN   = 0;
-    final double WRIST_FOLDED_OUT  = 0.72;
+    final double WRIST_FOLDED_OUT  = 0.65;
     final double FUDGE_FACTOR = 15 * ARM_TICKS_PER_DEGREE;
 
     /* Variables that are used to set the arm to a specific position */
@@ -141,7 +141,7 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
     final double LIFT_TICKS_PER_MM = (111132.0 / 289.0) / 120.0;
 
     final double LIFT_COLLAPSED = 0 * LIFT_TICKS_PER_MM;
-    final double LIFT_COLLECT =  400 * LIFT_TICKS_PER_MM;
+    final double LIFT_COLLECT = 1942;
     final double LIFT_SCORING_IN_LOW_BASKET = 0 * LIFT_TICKS_PER_MM;
     final double LIFT_SCORING_IN_HIGH_BASKET = 610 * LIFT_TICKS_PER_MM;
 
@@ -154,8 +154,8 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
 
     double armLiftComp = 0;
 
-    final double claw_OPEN = 0.5;
-    final double claw_CLOSE= 0.05;
+    final double claw_OPEN = 0.4;
+    final double claw_CLOSE= 0.07;
 
     @Override
     public void runOpMode() {
@@ -311,7 +311,7 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
                 intake.setPower(INTAKE_DEPOSIT);
             }*/
             if (gamepad1.dpad_down){
-                wrist.setPosition(0.95);
+                wrist.setPosition(0.3);
             }
 
             if(gamepad1.b){

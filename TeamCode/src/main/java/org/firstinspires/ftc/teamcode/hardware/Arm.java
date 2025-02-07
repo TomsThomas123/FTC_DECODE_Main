@@ -118,4 +118,25 @@ public class Arm {
     }
 
 
+
+
+
+    public class Armnewspec implements Action {
+        @Override
+
+        public boolean run(@NonNull TelemetryPacket packet) {
+            // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
+            armMotor.setTargetPosition(826);
+            armMotor.setPower(0.7);// (adjust speed for whatever is necessary)
+            //(you cannot stop motion within this action, you would have to do it in another)
+            armMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            return false;
+        }
+    }
+
+    public Action armNewSpec() {
+        return new Armnewspec();
+    }
+
+
 }

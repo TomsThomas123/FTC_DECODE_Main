@@ -110,6 +110,33 @@ public class Lift {
 
 
 
+    public class LiftScoreSpec implements Action {
+        private boolean initialized = false;
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket packet) {
+            if (!initialized) {
+                liftMotor.setPower(0.8);
+                initialized = true;
+            }
+
+            double pos = liftMotor.getCurrentPosition();
+            packet.put("liftPos", pos);
+            if (pos < 762) {
+                return true;
+            } else {
+                liftMotor.setPower(0);
+                return false;
+            }
+        }
+    }
+    public Action liftScoreSpec() {
+        return new LiftScoreSpec();
+    }
+
+
+
+
 
 
     public class LiftDown implements Action {

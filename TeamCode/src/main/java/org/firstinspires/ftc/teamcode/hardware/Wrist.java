@@ -113,4 +113,21 @@ public class Wrist {
 
 
 
+
+
+    public class WristNewScore implements Action {
+
+        @Override
+        public boolean run(@NonNull TelemetryPacket telemetryPacket) {
+            wrist.setPosition(0.3);
+            return false;
+        }
+    }
+
+    public Action wristNewScore() {
+        return new WristNewScore();
+    }
+
+
+
 }
