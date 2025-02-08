@@ -97,6 +97,7 @@ public class HighBasjet extends LinearOpMode {
                 .afterTime(0.2, lift.liftDown())
                 .splineToLinearHeading(new Pose2d(new Vector2d(-48.5, -46), Math.toRadians(90)), Math.toRadians(90))
                 .afterTime(0, arm.armDown())
+                .waitSeconds(5)
 
 
 
