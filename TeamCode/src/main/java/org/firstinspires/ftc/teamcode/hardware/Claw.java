@@ -22,7 +22,7 @@ public class Claw {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            wrist.setPosition(0.065);
+            wrist.setPosition(0.06);
             return false;
         }
     }

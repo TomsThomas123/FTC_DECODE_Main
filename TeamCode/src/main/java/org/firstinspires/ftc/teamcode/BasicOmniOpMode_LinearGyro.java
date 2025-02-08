@@ -152,10 +152,9 @@ public class BasicOmniOpMode_LinearGyro extends LinearOpMode {
     double looptime = 0;
     double oldtime = 0;
 
-    double armLiftComp = 0;
-
-    final double claw_OPEN = 0.4;
-    final double claw_CLOSE= 0.07;
+    double armLiftComp = 0.4;
+    final double claw_OPEN = 0.5;
+    final double claw_CLOSE= 0.06;
 
     @Override
     public void runOpMode() {
