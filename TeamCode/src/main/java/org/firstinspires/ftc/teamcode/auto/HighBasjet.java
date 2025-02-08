@@ -58,7 +58,7 @@ public class HighBasjet extends LinearOpMode {
                  // Move to basket
                 .waitSeconds(1)
                 // Step 2: Score the object in the high basket
-                .afterTime(0, wrist.wristMid())
+                .afterTime(0, wrist.wristScore())
                 .waitSeconds(1)
 // Adjust wrist for scoring
                 .afterTime(0, claw.clawOpen())
