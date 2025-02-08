@@ -77,7 +77,7 @@ public class newSpecAuto extends LinearOpMode {
                 .waitSeconds(0.5)
                 .afterTime(0.1 , claw.clawOpen())
                 .waitSeconds(0.1)
-                .afterTime(0 , wrist.wristDown())
+                .afterTime(0 , wrist.wristGrab())
                 .afterTime(0, lift.liftDown())
                 .setReversed(true)
                 .afterTime(0 , arm.armDown())
