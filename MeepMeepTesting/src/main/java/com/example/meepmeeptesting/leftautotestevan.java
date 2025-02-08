@@ -22,7 +22,7 @@ public class leftautotestevan {
                 .strafeTo(new Vector2d(-49,-10))
                         .strafeTo(new Vector2d(-49,-59))
 */
-                .splineToSplineHeading(new Pose2d(new Vector2d(-50,-48), Math.toRadians(225)), Math.toRadians(225))
+                .splineToLinearHeading(new Pose2d(new Vector2d(-49.25, -46), Math.toRadians(90)), Math.toRadians(90))
 
                 .build());
         meepMeep.setBackground(MeepMeep.Background.FIELD_INTO_THE_DEEP_JUICE_DARK)

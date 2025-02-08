@@ -95,7 +95,7 @@ public class Lift {
 
             double pos = liftMotor.getCurrentPosition();
             packet.put("liftPos", pos);
-            if (pos < 1940) {
+            if (pos < 1340) {
                 return true;
             } else {
                 liftMotor.setPower(0);
