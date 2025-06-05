@@ -53,7 +53,7 @@ public class Wrist {
 
         public boolean run(@NonNull TelemetryPacket packet) {
             // desired position, actions do not have parameters (you will have to create a new action for each position you need to go to in auto)
-            wrist.setPosition(0.76);
+            wrist.setPosition(0.3);
             return false;
         }
     }
@@ -119,7 +119,7 @@ public class Wrist {
 
         @Override
         public boolean run(@NonNull TelemetryPacket telemetryPacket) {
-            wrist.setPosition(0.3);
+            wrist.setPosition(0.70);
             return false;
         }
     }

@@ -49,6 +49,9 @@ public class Arm {
     public Action armDown() {
         return new ArmDown();
     }
+
+
+
     public class ArmUp implements Action {
         @Override
 
@@ -65,6 +68,8 @@ public class Arm {
     public Action armUp() {
         return new ArmUp();
     }
+
+
     public class ArmStop implements Action{
         @Override
         public boolean run(@NonNull TelemetryPacket packet) {
@@ -76,6 +81,8 @@ public class Arm {
     public Action armStop(){
         return new ArmStop();
     }
+
+
     public class ArmSpec2 implements Action{
         @Override
         public boolean run(@NonNull TelemetryPacket packet) {
@@ -88,6 +95,8 @@ public class Arm {
     public Action armSpec2(){
         return new ArmSpec2();
     }
+
+
     public class ArmSpec3 implements Action{
         @Override
         public boolean run(@NonNull TelemetryPacket packet) {
@@ -100,6 +109,8 @@ public class Arm {
     public Action armSpec3(){
         return new ArmSpec3();
     }
+
+
     public class ArmBasket implements Action {
         @Override
 

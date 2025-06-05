@@ -13,10 +13,10 @@ public class Lift {
     final double LIFT_TICKS_PER_MM = (111132.0 / 289.0) / 120.0;
 
     final double LIFT_COLLAPSED = 0 * LIFT_TICKS_PER_MM;
-    final double LIFT_COLLECT =  100 * LIFT_TICKS_PER_MM;
-    final double LIFT_SCORING_IN_LOW_BASKET = 0 * LIFT_TICKS_PER_MM;
-    final int  LIFT_SCORING_IN_HIGH_BASKET = (int) (600 * LIFT_TICKS_PER_MM);
-    final double TINY = ( 400 * LIFT_TICKS_PER_MM);
+//    final double LIFT_COLLECT =  100 * LIFT_TICKS_PER_MM;
+//    final double LIFT_SCORING_IN_LOW_BASKET = 0 * LIFT_TICKS_PER_MM;
+//    final int  LIFT_SCORING_IN_HIGH_BASKET = (int) (600 * LIFT_TICKS_PER_MM);
+//    final double TINY = ( 400 * LIFT_TICKS_PER_MM);
 
     double liftPosition = LIFT_COLLAPSED;
     private DcMotorEx liftMotor;
